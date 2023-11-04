@@ -1,45 +1,69 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Test from '@/components/Test'
-import UserIndex from '@/components/User/Index'
-import UserCreate from '@/components/User/CreateUser'
-import UserEdit from '@/components/User/EditUser'
-import UserShow from '@/components/User/ShowUser'
+import Vue from "vue";
+import Router from "vue-router";
+// Users
+import UserIndex from "@/components/Users/Index";
+import UserCreate from "@/components/Users/CreateUser";
+import UserEdit from "@/components/Users/EditUser";
+import UserShow from "@/components/Users/ShowUser";
 
-Vue.use(Router)
+import PetIndex from "@/components/Pets/PetIndex";
+import CreatePet from "@/components/Pets/CreatePet";
+import EditPet from "@/components/Pets/EditPet";
+import ShowPet from "@/components/Pets/ShowPet";
 
+import Login from "@/components/Users/login";
+
+Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: Test
-    },
-    {
-      path: '/users',
-      name: 'users',
+      path: "/users",
+      name: "users",
       component: UserIndex
     },
+
     {
-      path: '/user/create',
-      name: 'user-create',
+      path: "/user/create",
+      name: "users-create",
       component: UserCreate
     },
     {
-      path: '/user/edit/:userId',
-      name: 'user-edit',
+      path: "/user/edit/:userId",
+      name: "user-edit",
       component: UserEdit
     },
     {
-      path: '/user/:userId',
-      name: 'user',
+      path: "/user/:userId",
+      name: "user",
       component: UserShow
+    },
+    {
+      path: "/pets",
+      name: "pets",
+      component: PetIndex
+    },
+    {
+      path: "/pet/create",
+      name: "pets-create",
+      component: CreatePet
+    },
+
+    {
+      path: "/pet/edit/:petId",
+      name: "pet-edit",
+      component: EditPet
+    },
+
+    {
+      path: "/pet/:petId",
+      name: "pet",
+      component: ShowPet
+    },
+
+    {
+      path: "/login",
+      name: "login",
+      component: Login
     }
   ]
-})
+});
